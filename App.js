@@ -1,58 +1,61 @@
 
-import { StyleSheet, Text, View, Image } from 'react-native';
+import { StyleSheet, Text, View, Image,CheckBox } from 'react-native';
+import { TextInput } from 'react-native-web';
+import React, {useState} from 'react';
 
 export default function App() {
+
+  const [isSelected, setSelection] = useState(false);
   return (
     <View style={styles.container}>
-      <View style={styles.header}>
-        <Image
-          source={require('./img/usb.png')}
-          style={styles.usb}
-        />
-        <Text style={styles.headerText}>USB Bluetooth Music Receiver {"\n"}HJX-001- Biến loa thường thành loa {"\n"}bluetooth</Text>
-      </View>
       <View style={styles.body}>
-        <View>
-          <Text style={styles.text1}>Cực kì hài lòng</Text>
-        </View>
-        <View style={styles.ratingbar}>
-          <Image
-            source={require('./img/star.png')}
-            style={styles.star}
-          />
-          <Image
-            source={require('./img/star.png')}
-            style={styles.star}
-          />
-          <Image
-            source={require('./img/star.png')}
-            style={styles.star}
-          />
-          <Image
-            source={require('./img/star.png')}
-            style={styles.star}
-          />
-          <Image
-            source={require('./img/star.png')}
-            style={styles.star}
-          />
-        </View>
-        <View style={styles.viewBody}>
-          <Image
-            source={require('./img/camera.png')}
-            style={styles.camera}
-          />
-          <Text style={styles.text1}>Thêm hình ảnh</Text>
+        <View style={styles.header}>
+          <Text style={{color: 'white', fontSize:25}}>PASSWORD {"\n"}GENERATOR</Text>
         </View>
         <View>
-          <textarea
-            style={styles.textArea}
-            placeholder='Hãy chia sẽ những điều mà bạn thích về sản phẩm'
-          ></textarea>
+          <TextInput style={{backgroundColor: '#151537', height:55, marginTop: 33}}></TextInput>
         </View>
-      </View>
-      <View style={styles.btn}>
-        <Text style={styles.textBtn}>GỬI</Text>
+        <View style={styles.list}>
+          <View style={{flexDirection: 'row', justifyContent: 'Space-between'}}>
+            <Text style={{fontSize:20, color: 'white'}}>Password Lenght</Text>
+            <TextInput style={{backgroundColor: 'white', height:32}}></TextInput>
+          </View>
+          <View style={{flexDirection: 'row', justifyContent: 'Space-between', marginTop: 20}}>
+            <Text style={{fontSize:20, color: 'white'}}>Include lower case letter</Text>
+            <CheckBox
+              value={isSelected}
+              onValueChange={setSelection}
+              style={{alignSelf: 'center'}}
+            ></CheckBox>
+          </View>
+          <View style={{flexDirection: 'row', justifyContent: 'Space-between', marginTop: 20}}>
+            <Text style={{fontSize:20, color: 'white'}}>Include up case letter</Text>
+            <CheckBox
+              value={isSelected}
+              onValueChange={setSelection}
+              style={{alignSelf: 'center'}}
+            ></CheckBox>
+          </View>
+          <View style={{flexDirection: 'row', justifyContent: 'Space-between', marginTop: 20}}>
+            <Text style={{fontSize:20, color: 'white'}}>Include number</Text>
+            <CheckBox
+              value={isSelected}
+              onValueChange={setSelection}
+              style={{alignSelf: 'center'}}
+            ></CheckBox>
+          </View>
+          <View style={{flexDirection: 'row', justifyContent: 'Space-between', marginTop: 20}}>
+            <Text style={{fontSize:20, color: 'white'}}>Include specical symbol</Text>
+            <CheckBox
+              value={isSelected}
+              onValueChange={setSelection}
+              style={{alignSelf: 'center'}}
+            ></CheckBox>
+          </View>
+        </View>
+        <View style={{backgroundColor: '#3B3B98', height: 50, justifyContent: 'center', alignItems: 'center', marginTop:50}}>
+          <Text style={{fontSize:18, color: 'white'}}>GENERATE PASSWORD</Text>
+        </View>
       </View>
     </View>
   );
@@ -60,75 +63,24 @@ export default function App() {
 
 const styles = StyleSheet.create({
   container: {
-    
-  },
-  header: {
-    height: 150,
-
-    flexDirection: 'row',
-    paddingHorizontal: 13,
-    paddingVertical: 13
-  },
-  usb: {
-    width: 70,
-    height: 70
-  },
-  headerText: {
-    fontSize: 16,
-    fontWeight: 'bold',
+    backgroundColor: "#3B3B98",
+    flex: 1,
+    padding: 20
   },
   body: {
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  text1: {
-    color: 'black',
-    fontSize: 18,
-    fontWeight: 700,
-  },
-  star: {
-    width:39,
-    height:39
-  },
-  viewBody: {
-    flexDirection: 'row',
-    width: 330,
-    height: 70,
-    borderWidth:1,
-    borderColor: "blue",
-    justifyContent: 'center',
-    alignItems: 'center'
-  },
-  camera: {
-    width: 39,
-    height: 37,
-    marginRight: 20
-  },
-  textArea: {
-    marginTop: 20,
-    width: 330,
-    height: 200,
-    fontSize: 18,
+    flex: 1,
+    flexDirection: 'column',
+    backgroundColor: "#23235B",
+    borderRadius: 10,
     padding: 10
   },
-  ratingbar: {
-    flexDirection: 'row',
-    marginVertical: 20,
-    justifyContent: 'space-between'
+  header: {
+    marginTop: 40,
+    textAlign: 'center',
+    alignItems: 'center'
   },
-  btn: {
-    backgroundColor: "#0D5DB6",
-    height: 50,
-    justifyContent: 'center',
-    alignItems: 'center',
-    marginHorizontal: 30,
-    marginTop: 20,
-    borderRadius: 10
-  },
-  textBtn: {
-    color: "#FFFFFF",
-    fontSize:20,
-    fontWeight: 'bold',
-    
+  list: {
+    flexDirection: 'column',
+    paddingTop: 30
   }
 });
