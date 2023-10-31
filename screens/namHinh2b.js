@@ -6,7 +6,7 @@ export default function App() {
     <View style={styles.container}>
       <View style={styles.header}>
         <Image
-          source={require('./img/usb.png')}
+          source={require('../img/usb.png')}
           style={styles.usb}
         />
         <Text style={styles.headerText}>USB Bluetooth Music Receiver {"\n"}HJX-001- Biến loa thường thành loa {"\n"}bluetooth</Text>
@@ -17,29 +17,29 @@ export default function App() {
         </View>
         <View style={styles.ratingbar}>
           <Image
-            source={require('./img/star.png')}
+            source={require('../img/star.png')}
             style={styles.star}
           />
           <Image
-            source={require('./img/star.png')}
+            source={require('../img/star.png')}
             style={styles.star}
           />
           <Image
-            source={require('./img/star.png')}
+            source={require('../img/star.png')}
             style={styles.star}
           />
           <Image
-            source={require('./img/star.png')}
+            source={require('../img/star.png')}
             style={styles.star}
           />
           <Image
-            source={require('./img/star.png')}
+            source={require('../img/star.png')}
             style={styles.star}
           />
         </View>
         <View style={styles.viewBody}>
           <Image
-            source={require('./img/camera.png')}
+            source={require('../img/camera.png')}
             style={styles.camera}
           />
           <Text style={styles.text1}>Thêm hình ảnh</Text>
